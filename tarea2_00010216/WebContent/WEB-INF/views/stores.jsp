@@ -1,34 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>${message}</title>
+<title>Stores</title>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>${message}</h1>
+	<h1>Stores</h1>
 	<main role = "main" class = "container">
-		<table class="table table-dark">
+	<div class = "container">
+		<table class="table table-light">
   <thead>
+    <thead class="thead-light">
     <tr>
-			<th scope="col">Store</th>
+			<th scope="col">Name</th>
 			<th scope="col">Address</th>
 			<th scope="col">Operations</th>
 		</tr>
   </thead>
   <tbody>
-   	<c:forEach items="${book}" var="book">
+   	<c:forEach items="${store}" var="store">
 				<tr>
-					<td>${book.bTitle}</td>
-					<td>${book.bAuthor}</td>
-					<td>${book.bIsbn}</td>
-					<td>${book.bGenre}</td>
-					<td>${book.bStock}</td>
+					<td>${store.name}</td>
+					<td>${store.address}</td>
+					<td>
+					<div class = "container">
+					<div class = "row">
+						<div class = "cl-sm-6">
+						<!--<form action = "${pageContext.request.contextPath}/store/edit/${store.code}" method = "GET" >
+						<input type = "submit"  class="btn btn-primary" value = "Edit">
+						</form>-->
+						<button class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/stores/edit/${store.code}'">Edit</button>
+						</div>
+						<div class = "cl-sm-6">
+						<!--<form action = "${pageContext.request.contextPath}/store/delete/${store.code}" method = "GET" >
+						<input type = "submit"  class="btn btn-danger"  value = "Delete">
+						</form>-->
+						<button class="btn btn-danger" onclick="window.location.href='${pageContext.request.contextPath}/stores/delete/${store.code}'">Delete</button>
+						</div>
+					</div>
+					</div></td>
 				</tr>	
 			</c:forEach>
   </tbody>
 </table>
+</div>
 </main>
 </body>
 </html>

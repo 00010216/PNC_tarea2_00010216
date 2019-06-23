@@ -2,6 +2,7 @@ package com.uca.capas.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,7 +38,7 @@ public class Store {
 	@Column(name = "horarios")
 	private String schedule;
 	
-	@OneToMany(mappedBy = "store", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	List<Employee> employees;
 
 	public Store() {}

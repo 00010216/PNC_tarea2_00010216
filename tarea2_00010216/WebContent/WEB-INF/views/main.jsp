@@ -9,19 +9,24 @@
 </head>
 <body class="text-center">
 	<h1>${message}</h1>
+	
 	<!-- se utiliza un form normal pq no se esta ocuapando modelatrribute --> 
     <form class="form-signin" action = "${pageContext.request.contextPath}/login" method = "POST">
 		  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
 		  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		  
 		  <div class= "container col-sm-2 col-md-3 col-lg-4" >
+		  
 		  <div form = "label-group">
 		  <label for="inputEmail" class="sr-only">Username</label>
 		  <input type="text" id="inputEmail" class="form-control" name = "username" placeholder="Username" required autofocus>
 		  </div>
+		  
 		   <div form = "label-group">
 		  <label for="inputPassword" class="sr-only">Password</label>
 		  <input type="password" id="inputPassword" class="form-control" name = "password" placeholder="Password" required>
 		  </div>
+		  
 		  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		  </div>
 	</form>

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.uca.capas.domain.User;
-import com.uca.capas.repositories.UserRepository;
 import com.uca.capas.service.UserService;
 
 @Controller
@@ -28,8 +27,8 @@ public class UserController {
 				mav.setViewName("main");
 				mav.addObject("message","Error usuario no existe");
 			}else{ 
-			mav.setViewName("stores");
-			mav.addObject("message","Stores");
+			mav.setViewName("redirect:/stores");
+			//mav.addObject("message","Stores");
 			}
 		}catch(Exception e){
 			mav.setViewName("main");

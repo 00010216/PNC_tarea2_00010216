@@ -37,6 +37,10 @@ public class Employee {
 	@JoinColumn(name = "sucursal_id")
 	private Store store;
 
+	public Employee() {
+		super();
+	}
+
 	public Employee(Integer code, String name, Integer age, char gender, boolean status, Store store) {
 		super();
 		this.code = code;
