@@ -17,4 +17,5 @@ public class MainController {
 		mav.addObject("message","Hi");
 		return mav;
 	}
+	
 }
