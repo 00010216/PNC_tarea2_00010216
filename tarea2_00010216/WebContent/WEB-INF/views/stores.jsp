@@ -9,9 +9,16 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Stores</h1>
 	<main role = "main" class = "container">
 	<div class = "container">
+	<h1>Stores</h1>
+		<div class="row justify-content-start mt-4 mb-2">
+	    <div class="col">
+	      <form class="text-right" action = "${pageContext.request.contextPath}/addStore" method = "POST" >
+				<input type = "submit" class="btn btn-primary" value = "Add Store">
+			</form>
+	    </div>
+	  </div>
 		<table class="table table-light">
   <thead>
     <thead class="thead-light">
@@ -29,11 +36,18 @@
 					<td>
 					<div class = "container">
 					<div class = "row">
-						<div class = "cl-sm-6">
-						<button class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/stores/edit/${store.code}'">Edit</button>
+						<div class = "container"></div>
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						  <label class="btn btn-light">
+						    <input type="radio" name="options" onclick="window.location.href='${pageContext.request.contextPath}/stores/profile/${store.code}'"  autocomplete="off" > Profile
+						  </label>
+						  <label class="btn btn-light">
+						    <input type="radio" name="options" onclick="window.location.href='${pageContext.request.contextPath}/stores/edit/${store.code}'" autocomplete="off"> Edit
+						  </label>
+						  <label class="btn btn-light">
+						    <input type="radio" name="options" onclick="window.location.href='${pageContext.request.contextPath}/stores/delete/${store.code}'" autocomplete="off"> Delete
+						  </label>
 						</div>
-						<div class = "cl-sm-6">
-						<button class="btn btn-danger" onclick="window.location.href='${pageContext.request.contextPath}/stores/delete/${store.code}'">Delete</button>
 						</div>
 					</div>
 					</div></td>

@@ -89,4 +89,12 @@ public class StoreController {
 		mav.setViewName("stores");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/addStore", method = RequestMethod.POST)
+	public ModelAndView add() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("store",new Store());
+		mav.setViewName("storeform");
+		return mav;
+	}
 }
