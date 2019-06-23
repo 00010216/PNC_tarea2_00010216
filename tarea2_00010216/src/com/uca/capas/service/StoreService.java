@@ -11,4 +11,5 @@ public interface StoreService {
 	public List<Store> findAll() throws DataAccessException;
 	public Store findOne(Integer id) throws DataAccessException;
 	public void delete(Integer id) throws DataAccessException;
+	public Store save(Store store) throws DataAccessException;
 }

@@ -30,6 +30,11 @@ public class StoreServiceImplementation implements StoreService{
 		Store s = findOne(id);
 		storeRep.delete(s);
 	}
+
+	@Override
+	public Store save(Store store) throws DataAccessException {
+		return storeRep.save(store);
+	}
 	
 	
 }

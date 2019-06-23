@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,6 +53,40 @@ public class StoreController {
 			log.info("Error:" + e.toString());
 		}
 		mav.setViewName("redirect:/stores");
+		return mav;
+	}
+	
+	//Se manda a llamar la vista form y se le envia con los datos
+	@RequestMapping(value = "/stores/edit/{code}")
+	public ModelAndView edit(@PathVariable Integer code) {
+		ModelAndView mav = new ModelAndView();
+		Store store = null;
+		try {
+			store = storeSer.findOne(code);
+		}catch(Exception e){
+			log.info("Error:" + e.toString());
+		}
+		mav.addObject("store",store);
+		mav.setViewName("storeform");
+		return mav;
+	}
+	
+	//Al guardar sucursal se regresa a la vista de la lista de sucursales
+	@RequestMapping(value = "/save")
+	public ModelAndView save(@ModelAttribute Store store) {
+		ModelAndView mav = new ModelAndView();
+		List<Store> stores = null;
+		int valor_retorno=0;
+		
+		try {
+			storeSer.save(store); // se va a service para guardar store en la base
+		}catch(Exception e){
+			log.info("Error:" + e.toString());
+		}
+		stores = storeSer.findAll();
+		log.info(valor_retorno+"");
+		mav.addObject("store",stores);
+		mav.setViewName("stores");
 		return mav;
 	}
 }
