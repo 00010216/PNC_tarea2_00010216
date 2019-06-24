@@ -49,7 +49,7 @@
           <form:input type="text" class="form-control" id="address" path = "address" placeholder="1234 Main St"/>
         </div>
         <div class="mb-3">
-          <label>Opening hours</label>
+          <label>Schedule</label>
           <form:input type="text" class="form-control" id="tables" path ="schedule" />
         </div>
         <div class="mb-3">

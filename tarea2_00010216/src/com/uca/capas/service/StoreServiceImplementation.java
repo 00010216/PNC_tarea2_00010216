@@ -35,6 +35,11 @@ public class StoreServiceImplementation implements StoreService{
 	public Store save(Store store) throws DataAccessException {
 		return storeRep.save(store);
 	}
+
+	@Override
+	public Store fetchStoreWithEmployeesById(Integer id) throws DataAccessException {
+		return storeRep.fetchStoreWithEmployeesById(id);
+	}
 	
 	
 }

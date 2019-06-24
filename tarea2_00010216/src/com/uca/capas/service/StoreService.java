@@ -12,4 +12,5 @@ public interface StoreService {
 	public Store findOne(Integer id) throws DataAccessException;
 	public void delete(Integer id) throws DataAccessException;
 	public Store save(Store store) throws DataAccessException;
+	public Store fetchStoreWithEmployeesById(Integer id) throws DataAccessException;
 }

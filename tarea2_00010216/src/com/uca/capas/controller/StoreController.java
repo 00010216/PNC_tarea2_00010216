@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -97,4 +98,20 @@ public class StoreController {
 		mav.setViewName("storeform");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/stores/profile/{code}")
+	public String show(@PathVariable Integer code, Model m) {
+		//ModelAndView mav = new ModelAndView();
+		Store store = null;
+		try {
+			store = storeSer.fetchStoreWithEmployeesById(code);
+			m.addAttribute("store", store);
+		}catch(Exception e){
+			log.info("Error:" + e.toString());
+		}
+		//mav.addObject("store",store);
+		//mav.setViewName("storeprofile");
+		return "storeprofile";
+	}
+	
 }

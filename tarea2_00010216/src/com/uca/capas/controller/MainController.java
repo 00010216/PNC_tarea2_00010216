@@ -14,7 +14,6 @@ public class MainController {
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main");
-		mav.addObject("message","Hi");
 		return mav;
 	}
 	

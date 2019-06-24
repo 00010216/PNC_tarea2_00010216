@@ -28,7 +28,7 @@ public class Employee {
 	private Integer age;
 	
 	@Column(name = "sexo")
-	private char gender;
+	private String gender;
 	
 	@Column(name = "estado")
 	private boolean status;
@@ -41,7 +41,7 @@ public class Employee {
 		super();
 	}
 
-	public Employee(Integer code, String name, Integer age, char gender, boolean status, Store store) {
+	public Employee(Integer code, String name, Integer age, String gender, boolean status, Store store) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -75,11 +75,11 @@ public class Employee {
 		this.age = age;
 	}
 
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
