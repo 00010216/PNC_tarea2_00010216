@@ -73,7 +73,7 @@ public class StoreController {
 	}
 	
 	//Al guardar sucursal se regresa a la vista de la lista de sucursales
-	@RequestMapping(value = "/save")
+	@RequestMapping(value = "/stores/save")
 	public ModelAndView save(@ModelAttribute Store store) {
 		ModelAndView mav = new ModelAndView();
 		List<Store> stores = null;
@@ -87,7 +87,7 @@ public class StoreController {
 		stores = storeSer.findAll();
 		log.info(valor_retorno+"");
 		mav.addObject("store",stores);
-		mav.setViewName("stores");
+		mav.setViewName("redirect:/stores");
 		return mav;
 	}
 	

@@ -33,7 +33,7 @@
   </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Store Form</h4>
-      <form:form  action = "${pageContext.request.contextPath}/save" method = "POST" modelAttribute = "store">
+      <form:form  action = "${pageContext.request.contextPath}/stores/save" method = "POST" modelAttribute = "store">
       <form:input type="hidden" path="code" />
         <div class="row">
           <div class="col-md-6 mb-3">
