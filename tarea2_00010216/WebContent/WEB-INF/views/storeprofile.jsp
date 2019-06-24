@@ -59,6 +59,8 @@
 			    <dd>${store.name}</dd>
 			    <dt>Location</dt>
 			    <dd>${store.address}</dd>
+			     <dt>Schedule</dt>
+			    <dd>${store.schedule}</dd>
 			    <dt>Number of tables</dt>
 			    <dd>${store.numTables}</dd>
 			     <hr class="mb-4">
