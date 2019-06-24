@@ -28,6 +28,7 @@
 		  
 		  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 		  <br>
+		  <!-- error message -->
 		   <c:if test = "${not empty message}">
         <div class="row valign-wrapper">
             <div class="col s12">
