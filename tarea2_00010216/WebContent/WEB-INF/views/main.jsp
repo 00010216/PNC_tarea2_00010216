@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Rústico Login</title>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 </head>
 <body class="text-center bg-light">
@@ -26,7 +27,14 @@
 		  </div>
 		  
 		  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-		  <div class="alert alert-danger" role="alert"> ${message}</div>
+		  <br>
+		   <c:if test = "${not empty message}">
+        <div class="row valign-wrapper">
+            <div class="col s12">
+                 <div class="alert alert-danger" role="alert"> ${message}</div>
+            </div>
+        </div>
+        </c:if>
 		  </div>
 	</form>
 </body>
